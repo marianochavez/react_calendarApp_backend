@@ -25,10 +25,10 @@ router.post(
   "/",
   [
     check("title", "Title is required").not().isEmpty(),
-    check("startDate", "Start date is required").not().isEmpty(),
-    check("startDate", "Start date must be a valid date").isISO8601().toDate(),
-    check("endDate", "End date is required").not().isEmpty(),
-    check("endDate", "End date must be a valid date").isISO8601().toDate(),
+    check("start", "Start date is required").not().isEmpty(),
+    check("start", "Start date must be a valid date").isISO8601().toDate(),
+    check("end", "End date is required").not().isEmpty(),
+    check("end", "End date must be a valid date").isISO8601().toDate(),
     fieldValidator,
   ],
   createEvent
