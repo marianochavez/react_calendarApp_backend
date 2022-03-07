@@ -14,19 +14,19 @@ const router = Router();
 
 router.post("/new", 
     [
-        check("name", "Name is required").not().isEmpty(),
-        check("email", "Email is required").isEmail(),
-        check("password", "Password is required").not().isEmpty(),
-        check("password", "Password must be at least 6 characters").isLength({ min: 6 }),
+        check("name", "El nombre es obligatorio").not().isEmpty(),
+        check("email", "El email es obligatorio").isEmail(),
+        check("password", "La contraseña es obligatoria").not().isEmpty(),
+        check("password", "La contraseña debe tener al menos 6 caracteres").isLength({ min: 6 }),
         fieldValidator
     ], 
     createUser );
 
 router.post("/",
     [
-        check("email", "Email is required").isEmail(),
-        check("password", "Password is required").not().isEmpty(),
-        check("password", "Password must be at least 6 characters").isLength({ min: 6 }),
+        check("email", "Email inválido").isEmail(),
+        check("password", "Ingresa la contraseña").not().isEmpty(),
+        check("password", "Contraseña muy corta").isLength({ min: 6 }),
         fieldValidator
     ], 
     loginUser );

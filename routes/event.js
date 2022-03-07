@@ -24,11 +24,11 @@ router.get("/", [], getEvent);
 router.post(
   "/",
   [
-    check("title", "Title is required").not().isEmpty(),
-    check("start", "Start date is required").not().isEmpty(),
-    check("start", "Start date must be a valid date").isISO8601().toDate(),
-    check("end", "End date is required").not().isEmpty(),
-    check("end", "End date must be a valid date").isISO8601().toDate(),
+    check("title", "Ingresa el título").not().isEmpty(),
+    check("start", "Fecha de inicio necesaria").not().isEmpty(),
+    check("start", "Fecha de inicio no es una fecha válida").isISO8601().toDate(),
+    check("end", "Fecha de finalización necesaria").not().isEmpty(),
+    check("end", "Fecha fin no es una fecha válida").isISO8601().toDate(),
     fieldValidator,
   ],
   createEvent

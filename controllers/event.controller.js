@@ -26,7 +26,7 @@ const createEvent = async (req, res = response) => {
     console.log(error);
     res.status(500).json({
       ok: false,
-      msg: "Error in the create event",
+      msg: "Error en la creación del evento",
     });
   }
 };
@@ -41,14 +41,14 @@ const updateEvent = async (req, res = response) => {
     if (!event) {
       return res.status(404).json({
         ok: false,
-        msg: "Event not found",
+        msg: "Evento no encontrado",
       });
     }
 
     if (event.user.toString() !== uid) {
       return res.status(401).json({
         ok: false,
-        msg: "Not authorized",
+        msg: "No posee permisos para actualizar este evento",
       });
     }
 
@@ -69,7 +69,7 @@ const updateEvent = async (req, res = response) => {
     console.log(error);
     res.status(500).json({
       ok: false,
-      msg: "Error in the update event",
+      msg: "Error al actualizar el evento",
     });
   }
 };
@@ -84,14 +84,14 @@ const deleteEvent = async (req, res = response) => {
     if (!event) {
       return res.status(404).json({
         ok: false,
-        msg: "Event not found",
+        msg: "Evento no encontrado",
       });
     }
 
     if (event.user.toString() !== uid) {
       return res.status(401).json({
         ok: false,
-        msg: "Not authorized",
+        msg: "No posee permisos para eliminar este evento",
       });
     }
 
@@ -106,7 +106,7 @@ const deleteEvent = async (req, res = response) => {
     console.log(error);
     res.status(500).json({
       ok: false,
-      msg: "Error in the delete event",
+      msg: "Error al eliminar el evento",
     });
   }
 };
